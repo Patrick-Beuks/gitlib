@@ -17,7 +17,7 @@ $repository = Gitonomy\Git\Admin::init('/path/to/repository', false);
 ```
 
 Default behavior is to create a bare repository. If you want to
-initialize a repository with a working copy,pass `false` as third
+initialize a repository with a working copy,pass `false` as second
 argument of Repository constructor.
 
 Cloning repositories
@@ -53,7 +53,11 @@ If you already have a Repository instance and want to clone it, you can
 use this shortcut:
 
 ```php
+// Clone repository to a bare repository
 $new = $repository->cloneTo('/tmp/clone');
+
+// Clone repository to a non-bare repository
+$new = $repository->cloneTo('/tmp/clone', false);
 ```
 
 Mirror a repository
@@ -64,11 +68,7 @@ If you want to mirror fully a repository and all references, use the
 and what to mirror:
 
 ```php
-// Mirror to a bare repository
 $mirror = Gitonomy\Git\Admin::mirrorTo('/tmp/mirror', 'https://github.com/gitonomy/gitlib.git');
-
-// Mirror to a non-bare repository
-$mirror = Gitonomy\Git\Admin::mirrorTo('/tmp/mirror', 'https://github.com/gitonomy/gitlib.git', false);
 ```
 
 ### References

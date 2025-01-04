@@ -53,3 +53,5 @@ $log->setLimit(40);
 $log->getOffset();
 $log->getLimit();
 ```
+
+# TODO add get commits
